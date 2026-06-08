@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brotherhood Circle — Silent Lake 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0a0905;
+      --dark: #12100b;
+      --earth: #1e1a12;
+      --bark: #2e2618;
+      --ash: #4a4030;
+      --ember: #c4703a;
+      --flame: #e8913a;
+      --gold: #c9a84c;
+      --cream: #f0e8d5;
+      --fog: #8a7e6a;
+      --moss: #4a5240;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* GRAIN OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(10,9,5,0.9), transparent);
+    }
+
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream);
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.6rem 1.4rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 3rem 6rem;
+      position: relative;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(196,112,58,0.12) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(74,82,64,0.15) 0%, transparent 50%),
+                  linear-gradient(to bottom, var(--black) 0%, var(--dark) 50%, var(--black) 100%);
+    }
+
+    .hero-line {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .edition-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.2s forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: 0.05em;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.4s forwards;
+    }
+
+    .hero h1 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+      font-size: 0.85em;
+    }
+
+    .hero-sub {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--fog);
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.6s forwards;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.8s forwards;
+    }
+
+    .hero-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    .hero-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--ash);
+    }
+
+    .hero-place {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--fog);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 3rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ash);
+      writing-mode: vertical-rl;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.2s forwards;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 7rem 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .full-width {
+      max-width: 100%;
+      padding: 7rem 0;
+    }
+
+    .section-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 60px;
+      height: 1px;
+      background: var(--ember);
+      opacity: 0.4;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      color: var(--cream);
+    }
+
+    h2 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: rgba(240,232,213,0.75);
+      max-width: 640px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* INTENTION */
+    .intention {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: center;
+    }
+
+    .intention-text p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+    }
+
+    .intention-aside {
+      border-left: 1px solid var(--bark);
+      padding-left: 4rem;
+    }
+
+    .pull-quote {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      color: var(--gold);
+      max-width: 100%;
+    }
+
+    .pull-quote-attr {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--fog);
+      margin-top: 1.5rem;
+    }
+
+    /* BROTHERHOOD */
+    .brotherhood {
+      background: var(--earth);
+      border-top: 1px solid var(--bark);
+      border-bottom: 1px solid var(--bark);
+    }
+
+    .brotherhood-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .brotherhood-inner h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+    }
+
+    .brotherhood-body p {
+      max-width: 100%;
+    }
+
+    .initiation-box {
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 2.5rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    .initiation-box::before {
+      content: '⟡';
+      position: absolute;
+      top: -0.8rem;
+      left: 2rem;
+      background: var(--earth);
+      padding: 0 0.5rem;
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .initiation-box p {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--cream);
+      margin: 0;
+    }
+
+    /* ANCESTORS */
+    .ancestors-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 3rem;
+    }
+
+    .ancestors-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 6rem;
+      margin-top: 4rem;
+    }
+
+    /* PROGRAMME */
+    .programme {
+      background: var(--dark);
+    }
+
+    .programme-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 3rem;
+    }
+
+    .programme-intro {
+      max-width: 640px;
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: rgba(240,232,213,0.8);
+      line-height: 1.8;
+      margin-bottom: 5rem;
+    }
+
+    .programme-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      border: 1px solid var(--bark);
+    }
+
+    .programme-item {
+      padding: 2rem 2.5rem;
+      border-right: 1px solid var(--bark);
+      border-bottom: 1px solid var(--bark);
+      transition: background 0.3s ease;
+    }
+
+    .programme-item:hover {
+      background: var(--earth);
+    }
+
+    .programme-item:nth-child(even) {
+      border-right: none;
+    }
+
+    .programme-item-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .programme-item-desc {
+      font-size: 0.95rem;
+      color: var(--fog);
+      margin: 0;
+    }
+
+    .programme-dynamics {
+      margin-top: 4rem;
+      padding-top: 4rem;
+      border-top: 1px solid var(--bark);
+    }
+
+    .programme-dynamics-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--fog);
+      margin-bottom: 2rem;
+    }
+
+    .dynamics-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .dynamics-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: rgba(240,232,213,0.6);
+      border: 1px solid var(--bark);
+      padding: 0.4rem 1rem;
+    }
+
+    /* LIEU */
+    .lieu-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7rem;
+      align-items: center;
+    }
+
+    .lieu-visual {
+      position: relative;
+      aspect-ratio: 3/4;
+      background: var(--earth);
+      border: 1px solid var(--bark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .lieu-visual-placeholder {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ash);
+      text-align: center;
+    }
+
+    .lieu-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(196,112,58,0.08), transparent 70%);
+    }
+
+    /* ACCOMMODATIONS */
+    .accom {
+      background: var(--earth);
+      border-top: 1px solid var(--bark);
+    }
+
+    .accom-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 3rem;
+    }
+
+    .accom-quote {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--cream);
+      margin-bottom: 4rem;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .accom-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--bark);
+    }
+
+    .accom-item {
+      padding: 2rem;
+      border-right: 1px solid var(--bark);
+      border-bottom: 1px solid var(--bark);
+    }
+
+    .accom-item:nth-child(3n) { border-right: none; }
+    .accom-item:nth-last-child(-n+3) { border-bottom: none; }
+
+    .accom-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .accom-cap {
+      font-size: 0.9rem;
+      color: var(--fog);
+      margin: 0;
+    }
+
+    /* TEAM */
+    .team-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 3rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .team-member {
+      border-top: 1px solid var(--bark);
+      padding-top: 2rem;
+    }
+
+    .team-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--earth);
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .team-photo-placeholder {
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ash);
+    }
+
+    .team-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-role {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--fog);
+      margin: 0;
+    }
+
+    /* PRICING */
+    .pricing {
+      background: var(--dark);
+      border-top: 1px solid var(--bark);
+      border-bottom: 1px solid var(--bark);
+    }
+
+    .pricing-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 3rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .pricing-card {
+      border: 1px solid var(--bark);
+      padding: 3rem 2.5rem;
+      position: relative;
+      transition: border-color 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      border-color: var(--gold);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--ember);
+      background: rgba(196,112,58,0.05);
+    }
+
+    .pricing-card.featured::before {
+      content: 'Most spots taken here';
+      position: absolute;
+      top: -0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--ember);
+      color: var(--black);
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      white-space: nowrap;
+    }
+
+    .pricing-phase {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--fog);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-deadline {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--ember);
+      margin-bottom: 2rem;
+    }
+
+    .pricing-includes {
+      border-top: 1px solid var(--bark);
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .pricing-includes-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--fog);
+      margin-bottom: 1rem;
+    }
+
+    .pricing-includes li {
+      list-style: none;
+      font-size: 0.9rem;
+      color: rgba(240,232,213,0.6);
+      padding: 0.3rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .pricing-includes li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--ash);
+      font-size: 0.7rem;
+    }
+
+    .pricing-note {
+      margin-top: 3rem;
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--fog);
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 10rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(196,112,58,0.1) 0%, transparent 60%);
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .cta p {
+      max-width: 500px;
+      margin: 0 auto 3rem;
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      position: relative;
+    }
+
+    .cta-button {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--gold);
+      padding: 1.2rem 3.5rem;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--flame);
+      transform: translateY(-2px);
+    }
+
+    .cta-spots {
+      margin-top: 2rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--fog);
+      position: relative;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--bark);
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--fog);
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: var(--ash);
+      margin: 0;
+    }
+
+    /* SEPARATOR */
+    .sep {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--bark), transparent);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1.5rem; }
+      section { padding: 5rem 1.5rem; }
+      .intention { grid-template-columns: 1fr; gap: 3rem; }
+      .intention-aside { border-left: none; border-top: 1px solid var(--bark); padding-left: 0; padding-top: 3rem; }
+      .brotherhood-inner { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
+      .ancestors-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .programme-inner { padding: 5rem 1.5rem; }
+      .programme-grid { grid-template-columns: 1fr; }
+      .programme-item:nth-child(even) { border-right: 1px solid var(--bark); }
+      .lieu-inner { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
+      .accom-inner { padding: 5rem 1.5rem; }
+      .accom-list { grid-template-columns: 1fr 1fr; }
+      .team-inner { padding: 5rem 1.5rem; }
+      .team-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .pricing-inner { padding: 5rem 1.5rem; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .hero { padding: 0 1.5rem 5rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Brotherhood Circle</a>
+    <a href="#apply" class="nav-cta">Apply Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero full-width">
+    <div class="hero-bg"></div>
+    <div class="hero-line"></div>
+    <div class="hero-content">
+      <div class="edition-tag">4th Edition &nbsp;·&nbsp; Men's Gathering</div>
+      <h1>Brotherhood<br><em>Circle</em></h1>
+      <div class="hero-sub">Silent Lake &nbsp;·&nbsp; North Poland</div>
+      <div class="hero-meta">
+        <span class="hero-date">September 6–13, 2026</span>
+        <span class="hero-divider"></span>
+        <span class="hero-place">8 Days &nbsp;·&nbsp; 20 Men</span>
+      </div>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- INTENTION -->
+  <section>
+    <div class="section-label">The Intention</div>
+    <div class="intention">
+      <div class="intention-text reveal">
+        <h2>Something has<br>been <em>erased</em></h2>
+        <p>The knowledge of how to be a man among men. How to sit with fire. How to move through forest. How to speak truth in a circle of brothers.</p>
+        <p>For generations, this wasn't taught. It was lived.</p>
+        <p>This gathering is an attempt to live it again.</p>
+      </div>
+      <div class="intention-aside reveal">
+        <div class="pull-quote">"Once you're through the other side, it's beautiful. Take the leap."</div>
+        <div class="pull-quote-attr">— Joubin &nbsp;·&nbsp; His third Brotherhood Circle</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- BROTHERHOOD -->
+  <div class="brotherhood full-width">
+    <div class="brotherhood-inner">
+      <div class="reveal">
+        <div class="section-label">Brotherhood</div>
+        <h2>Why gather<br>as <em>brothers</em></h2>
+      </div>
+      <div class="brotherhood-body reveal">
+        <p>There are things that only happen in the company of other men. Not competition. Not performance.</p>
+        <p>Accountability. Honesty. The kind of silence that holds you. Brotherhood is not a concept. It's a practice. And it changes you.</p>
+        <div class="initiation-box">
+          <p>This week is a rite of passage — an initiatory process where each man sheds what no longer serves him and remembers what he's made of.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANCESTORS -->
+  <div class="full-width">
+    <div class="ancestors-inner">
+      <div class="section-label reveal">The Forest</div>
+      <div class="ancestors-grid">
+        <div class="reveal">
+          <h2>After the desert,<br><em>the forest</em></h2>
+          <p>Our first gatherings took us to the desert of Morocco — wide open, stripped back, ancestral.</p>
+          <p>This time, the forest is calling. The lakes, the pines, the cold water, the dark earth of Northern Europe.</p>
+          <p>Our own roots. What our ancestors knew before it was forgotten. Nature doesn't ask who you are. It reminds you.</p>
+        </div>
+        <div class="reveal" style="border-left: 1px solid var(--bark); padding-left: 3rem; margin-top: 0.5rem;">
+          <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--fog); margin-bottom: 2rem;">Previous Editions</p>
+          <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--bark);">
+            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;">Morocco</div>
+            <div style="font-size: 0.9rem; color: var(--fog);">Desert &amp; Atlantic coast<br>January 2026</div>
+          </div>
+          <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--bark);">
+            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;">Poland</div>
+            <div style="font-size: 0.9rem; color: var(--fog);">Silent Lake<br>September 2025</div>
+          </div>
+          <div>
+            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;">Poland</div>
+            <div style="font-size: 0.9rem; color: var(--fog);">Silent Lake<br>September 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRAMME -->
+  <div class="programme full-width">
+    <div class="programme-inner">
+      <div class="section-label reveal">The Programme</div>
+      <h2 class="reveal">Eight days in the <em>forest</em></h2>
+      <p class="programme-intro reveal">To reconnect with what is alive and wild in us, and carry it back into the world with our brothers.</p>
+      <div class="programme-grid reveal">
+        <div class="programme-item">
+          <div class="programme-item-title">Plant Medicine Ceremonies</div>
+          <div class="programme-item-desc">Guided by Lasu, a facilitator working with forest medicines</div>
+        </div>
+        <div class="programme-item">
+          <div class="programme-item-title">Temazcal</div>
+          <div class="programme-item-desc">Sweat ceremony by the water. Purification through fire and steam</div>
+        </div>
+        <div class="programme-item">
+          <div class="programme-item-title">Mongolian Throat Singing</div>
+          <div class="programme-item-desc">Workshop with a specialist in this ancient vocal tradition</div>
+        </div>
+        <div class="programme-item">
+          <div class="programme-item-title">Deer Walk</div>
+          <div class="programme-item-desc">Moving through the forest in silence and presence</div>
+        </div>
+        <div class="programme-item">
+          <div class="programme-item-title">Stone Circles</div>
+          <div class="programme-item-desc">Ancient ritual structure, collective intention setting</div>
+        </div>
+        <div class="programme-item">
+          <div class="programme-item-title">Bushcraft</div>
+          <div class="programme-item-desc">Practical skills in the forest. Fire, shelter, the basics of living close to the land</div>
+        </div>
+        <div class="programme-item">
+          <div class="programme-item-title">Sauna</div>
+          <div class="programme-item-desc">On the lake. Heat, cold water, silence</div>
+        </div>
+        <div class="programme-item">
+          <div class="programme-item-title">Kayak</div>
+          <div class="programme-item-desc">On the river. Movement, openness, ease</div>
+        </div>
+      </div>
+      <div class="programme-dynamics reveal">
+        <div class="programme-dynamics-title">Throughout the week</div>
+        <div class="dynamics-list">
+          <span class="dynamics-tag">Breathwork</span>
+          <span class="dynamics-tag">Emotional Work</span>
+          <span class="dynamics-tag">Manhood Initiation</span>
+          <span class="dynamics-tag">Healing Inner Child</span>
+          <span class="dynamics-tag">Sharing Circles</span>
+          <span class="dynamics-tag">Men's Work Dynamics</span>
+          <span class="dynamics-tag">Storytelling Evening</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIEU -->
+  <div class="full-width">
+    <div class="lieu-inner">
+      <div class="reveal">
+        <div class="section-label">The Venue</div>
+        <h2>Silent Lake,<br><em>North Poland</em></h2>
+        <p>One of the biggest forest complexes in Europe. A land off the grid, off the road.</p>
+        <p>Built and tended with care by Adam, its guardian, for over a decade. A temazcal by the water. A sauna. Ancient trees. Total stillness.</p>
+        <p>Not a retreat centre. A living place.</p>
+      </div>
+      <div class="lieu-visual reveal">
+        <div class="lieu-visual-placeholder">Your photo here</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCOMMODATIONS -->
+  <div class="accom full-width">
+    <div class="accom-inner">
+      <div class="section-label reveal">Accommodations</div>
+      <div class="accom-quote reveal">"Every house has its own spirit.<br>Each one is a little piece of art."<br><span style="font-size: 0.9rem; color: var(--fog);">— Adam, guardian of Silent Lake</span></div>
+      <div class="accom-list reveal">
+        <div class="accom-item">
+          <div class="accom-name">Treehouse</div>
+          <div class="accom-cap">2 people</div>
+        </div>
+        <div class="accom-item">
+          <div class="accom-name">Pine House</div>
+          <div class="accom-cap">3 people</div>
+        </div>
+        <div class="accom-item">
+          <div class="accom-name">Lake House</div>
+          <div class="accom-cap">3 people</div>
+        </div>
+        <div class="accom-item">
+          <div class="accom-name">Maloka</div>
+          <div class="accom-cap">6–8 people · main workshop space</div>
+        </div>
+        <div class="accom-item">
+          <div class="accom-name">Bell Tents</div>
+          <div class="accom-cap">3 people each · ×2</div>
+        </div>
+        <div class="accom-item">
+          <div class="accom-name">Camping Field</div>
+          <div class="accom-cap">Under the stars</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <section>
+    <div class="section-label reveal">The Team</div>
+    <div class="team-grid reveal">
+      <div class="team-member">
+        <div class="team-photo"><span class="team-photo-placeholder">Photo</span></div>
+        <div class="team-name">Marcio Crispim</div>
+        <div class="team-role">Men's work facilitator, retreat lead</div>
+      </div>
+      <div class="team-member">
+        <div class="team-photo"><span class="team-photo-placeholder">Photo</span></div>
+        <div class="team-name">Mano Chico</div>
+        <div class="team-role">Firekeeper, musician, retreat flow</div>
+      </div>
+      <div class="team-member">
+        <div class="team-photo"><span class="team-photo-placeholder">Photo</span></div>
+        <div class="team-name">Anys</div>
+        <div class="team-role">Communications, vision, retreat structure</div>
+      </div>
+      <div class="team-member">
+        <div class="team-photo"><span class="team-photo-placeholder">Photo</span></div>
+        <div class="team-name">Adam</div>
+        <div class="team-role">Guardian of Silent Lake, land and forest guide</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <div class="pricing full-width">
+    <div class="pricing-inner">
+      <div class="section-label reveal">Investment</div>
+      <h2 class="reveal">Three phases,<br><em>one week</em></h2>
+      <div class="pricing-grid reveal">
+        <div class="pricing-card featured">
+          <div class="pricing-phase">Early Bird</div>
+          <div class="pricing-amount">€950</div>
+          <div class="pricing-deadline">Until July 15</div>
+          <div class="pricing-includes">
+            <div class="pricing-includes-title">Includes</div>
+            <ul>
+              <li>All accommodation</li>
+              <li>All meals (8 days)</li>
+              <li>All activities and ceremonies</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-phase">Standard</div>
+          <div class="pricing-amount">€1,250</div>
+          <div class="pricing-deadline">Until August 15</div>
+          <div class="pricing-includes">
+            <div class="pricing-includes-title">Includes</div>
+            <ul>
+              <li>All accommodation</li>
+              <li>All meals (8 days)</li>
+              <li>All activities and ceremonies</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-phase">Full Price</div>
+          <div class="pricing-amount">€1,400</div>
+          <div class="pricing-deadline">After August 15</div>
+          <div class="pricing-includes">
+            <div class="pricing-includes-title">Includes</div>
+            <ul>
+              <li>All accommodation</li>
+              <li>All meals (8 days)</li>
+              <li>All activities and ceremonies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="pricing-note reveal">Transport to Poland not included. Maximum 20 participants.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta" id="apply">
+    <div class="cta-bg"></div>
+    <h2 class="reveal">Ready to <em>come</em></h2>
+    <p class="reveal">20 men. 8 days. The forest is waiting.</p>
+    <a href="mailto:hello@brotherhood-circle.com" class="cta-button reveal">Apply Now</a>
+    <div class="cta-spots reveal">20 spots total &nbsp;·&nbsp; Early bird closes July 15</div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Brotherhood Circle &nbsp;·&nbsp; 2026</div>
+    <p class="footer-copy">Silent Lake, North Poland &nbsp;·&nbsp; September 6–13</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
