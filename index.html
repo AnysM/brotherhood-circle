@@ -14,9 +14,9 @@
       --earth: #1e1a12;
       --bark: #2e2618;
       --ash: #4a4030;
-      --ember: #c4703a;
-      --flame: #e8913a;
-      --gold: #c9a84c;
+      --accent: #6b9a60;
+      --flame: #6b9a60;
+      --gold: #f5f0e8;
       --cream: #f0e8d5;
       --fog: #8a7e6a;
       --moss: #4a5240;
@@ -62,7 +62,7 @@
       font-family: 'Cinzel', serif;
       font-size: 0.75rem;
       letter-spacing: 0.25em;
-      color: var(--gold);
+      color: #f5f0e8;
       text-transform: uppercase;
       text-decoration: none;
     }
@@ -73,16 +73,16 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--cream);
-      border: 1px solid rgba(201,168,76,0.4);
+      border: 1px solid rgba(245,240,232,0.25);
       padding: 0.6rem 1.4rem;
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .nav-cta:hover {
-      background: var(--gold);
+      background: #f5f0e8;
       color: var(--black);
-      border-color: var(--gold);
+      border-color: #f5f0e8;
     }
 
     /* HERO */
@@ -122,7 +122,7 @@
       font-weight: 500;
       letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--ember);
+      color: var(--accent);
       margin-bottom: 1.5rem;
       opacity: 0;
       animation: fadeUp 1s ease 0.2s forwards;
@@ -210,7 +210,7 @@
       font-size: 0.6rem;
       letter-spacing: 0.4em;
       text-transform: uppercase;
-      color: var(--ember);
+      color: var(--accent);
       margin-bottom: 3rem;
       display: flex;
       align-items: center;
@@ -222,7 +222,7 @@
       flex: 1;
       max-width: 60px;
       height: 1px;
-      background: var(--ember);
+      background: var(--accent);
       opacity: 0.4;
     }
 
@@ -237,16 +237,17 @@
     }
 
     h2 em {
-      font-family: 'Poppins', sans-serif;
-      font-style: italic;
-      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-style: normal;
+      color: var(--accent);
     }
 
     p {
-      font-size: 1.1rem;
-      color: rgba(240,232,213,0.75);
+      font-size: 0.9rem;
+      color: rgba(240,232,213,0.72);
       max-width: 640px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.4rem;
+      line-height: 1.8;
     }
 
     /* INTENTION */
@@ -258,7 +259,7 @@
     }
 
     .intention-text p {
-      font-size: 1.2rem;
+      font-size: 0.92rem;
       line-height: 1.9;
     }
 
@@ -270,9 +271,9 @@
     .pull-quote {
       font-family: 'Poppins', sans-serif;
       font-style: italic;
-      font-size: 1.6rem;
+      font-size: 1.1rem;
       line-height: 1.5;
-      color: var(--gold);
+      color: #f5f0e8;
       max-width: 100%;
     }
 
@@ -331,14 +332,14 @@
       left: 2rem;
       background: var(--earth);
       padding: 0 0.5rem;
-      color: var(--gold);
+      color: #f5f0e8;
       font-size: 1rem;
     }
 
     .initiation-box p {
       font-family: 'Poppins', sans-serif;
       font-style: italic;
-      font-size: 1.15rem;
+      font-size: 0.9rem;
       color: var(--cream);
       margin: 0;
     }
@@ -383,7 +384,7 @@
       max-width: 640px;
       font-family: 'Poppins', sans-serif;
       font-style: italic;
-      font-size: 1.25rem;
+      font-size: 0.92rem;
       color: rgba(240,232,213,0.8);
       line-height: 1.8;
       margin-bottom: 5rem;
@@ -416,7 +417,7 @@
       font-size: 0.8rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: #f5f0e8;
       margin-bottom: 0.5rem;
     }
 
@@ -496,7 +497,7 @@
     .accom-quote {
       font-family: 'Poppins', sans-serif;
       font-style: italic;
-      font-size: 1.5rem;
+      font-size: 1rem;
       color: var(--cream);
       margin-bottom: 4rem;
       max-width: 600px;
@@ -532,7 +533,7 @@
       font-size: 0.75rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: #f5f0e8;
       margin-bottom: 0.3rem;
     }
 
@@ -626,11 +627,11 @@
     }
 
     .pricing-card:hover {
-      border-color: var(--gold);
+      border-color: #f5f0e8;
     }
 
     .pricing-card.featured {
-      border-color: var(--ember);
+      border-color: var(--accent);
       background: rgba(196,112,58,0.05);
     }
 
@@ -640,7 +641,7 @@
       top: -0.75rem;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--ember);
+      background: var(--accent);
       color: var(--black);
       font-family: 'Cinzel', serif;
       font-size: 0.55rem;
@@ -672,7 +673,7 @@
       font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-size: 0.9rem;
-      color: var(--ember);
+      color: var(--accent);
       margin-bottom: 2rem;
     }
 
@@ -743,7 +744,7 @@
       margin: 0 auto 3rem;
       font-family: 'Poppins', sans-serif;
       font-style: italic;
-      font-size: 1.2rem;
+      font-size: 0.92rem;
       position: relative;
     }
 
@@ -754,7 +755,7 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--black);
-      background: var(--gold);
+      background: #f5f0e8;
       padding: 1.2rem 3.5rem;
       text-decoration: none;
       position: relative;
@@ -762,7 +763,7 @@
     }
 
     .cta-button:hover {
-      background: var(--flame);
+      background: var(--accent);
       transform: translateY(-2px);
     }
 
@@ -921,15 +922,15 @@
         <div class="reveal" style="border-left: 1px solid var(--bark); padding-left: 3rem; margin-top: 0.5rem;">
           <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--fog); margin-bottom: 2rem;">Previous Editions</p>
           <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--bark);">
-            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;">Morocco</div>
+            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 0.5rem;">Morocco</div>
             <div style="font-size: 0.9rem; color: var(--fog);">Desert &amp; Atlantic coast<br>January 2026</div>
           </div>
           <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--bark);">
-            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;">Poland</div>
+            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 0.5rem;">Poland</div>
             <div style="font-size: 0.9rem; color: var(--fog);">Silent Lake<br>September 2025</div>
           </div>
           <div>
-            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;">Poland</div>
+            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 0.5rem;">Poland</div>
             <div style="font-size: 0.9rem; color: var(--fog);">Silent Lake<br>September 2024</div>
           </div>
         </div>
