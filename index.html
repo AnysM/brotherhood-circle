@@ -103,8 +103,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to bottom, rgba(10,9,5,0.45) 0%, rgba(10,9,5,0.55) 60%, var(--black) 100%),
-        url('images/site/hero.jpg') center 30% / cover no-repeat;
+        linear-gradient(to bottom, rgba(10,9,5,0.15) 0%, rgba(10,9,5,0.2) 60%, var(--black) 100%),
+        url('images/site/hero.jpg') center 40% / cover no-repeat;
     }
 
     .hero-content {
@@ -807,6 +807,21 @@
       background: linear-gradient(to right, transparent, var(--bark), transparent);
     }
 
+    /* FULL-BLEED PHOTO STRIPS */
+    .photo-strip {
+      width: 100%;
+      height: 70vh;
+      min-height: 400px;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    .photo-strip-1 { background-image: url('images/site/fullbleed1.jpg'); background-position: center 30%; }
+    .photo-strip-2 { background-image: url('images/site/fullbleed2.jpg'); background-position: center 60%; }
+    .photo-strip-3 { background-image: url('images/site/fullbleed3.jpg'); background-position: center 40%; }
+
     /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -887,7 +902,8 @@
     </div>
   </section>
 
-  <div class="sep"></div>
+  <!-- PHOTO STRIP 1 : lac brumeux à l'aube -->
+  <div class="photo-strip photo-strip-1"></div>
 
   <!-- BROTHERHOOD -->
   <div class="brotherhood full-width">
@@ -923,20 +939,27 @@
           <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--fog); margin-bottom: 2rem;">Previous Editions</p>
           <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--bark);">
             <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 0.5rem;">Morocco</div>
-            <div style="font-size: 0.9rem; color: var(--fog);">Desert &amp; Atlantic coast<br>January 2026</div>
+            <div style="font-size: 0.85rem; color: var(--fog);">Désert &amp; côte atlantique<br>Janvier 2025 · 1ère édition</div>
           </div>
           <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--bark);">
             <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 0.5rem;">Poland</div>
-            <div style="font-size: 0.9rem; color: var(--fog);">Silent Lake<br>September 2025</div>
+            <div style="font-size: 0.85rem; color: var(--fog);">Silent Lake<br>Septembre 2025 · 2ème édition</div>
+          </div>
+          <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--bark);">
+            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 0.5rem;">Morocco</div>
+            <div style="font-size: 0.85rem; color: var(--fog);">Désert<br>Janvier 2026 · 3ème édition</div>
           </div>
           <div>
-            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #f5f0e8; margin-bottom: 0.5rem;">Poland</div>
-            <div style="font-size: 0.9rem; color: var(--fog);">Silent Lake<br>September 2024</div>
+            <div style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;">Poland ← Now</div>
+            <div style="font-size: 0.85rem; color: var(--fog);">Silent Lake<br>Septembre 2026 · 4ème édition</div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- PHOTO STRIP 2 : groupe dans la prairie -->
+  <div class="photo-strip photo-strip-2"></div>
 
   <!-- PROGRAMME -->
   <div class="programme full-width">
@@ -992,6 +1015,9 @@
       </div>
     </div>
   </div>
+
+  <!-- PHOTO STRIP 3 : homme dans l'eau, bras ouverts -->
+  <div class="photo-strip photo-strip-3"></div>
 
   <!-- LIEU -->
   <div class="full-width">
