@@ -6,7 +6,7 @@
   <title>Brotherhood Circle — Silent Lake 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
       --black: #0a0905;
@@ -29,7 +29,7 @@
     body {
       background: var(--black);
       color: var(--cream);
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: 'Poppins', Georgia, sans-serif;
       font-size: 18px;
       line-height: 1.7;
       overflow-x: hidden;
@@ -100,9 +100,9 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 60% 40%, rgba(196,112,58,0.12) 0%, transparent 60%),
-                  radial-gradient(ellipse at 20% 80%, rgba(74,82,64,0.15) 0%, transparent 50%),
-                  linear-gradient(to bottom, var(--black) 0%, var(--dark) 50%, var(--black) 100%);
+      background:
+                  linear-gradient(to bottom, rgba(10,9,5,0.55) 0%, rgba(10,9,5,0.35) 40%, var(--black) 100%),
+                  url('images/site/hero.jpg') center 30% / cover no-repeat;
     }
 
     .hero-line {
@@ -143,7 +143,7 @@
     }
 
     .hero h1 em {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-weight: 300;
       color: var(--gold);
@@ -151,7 +151,7 @@
     }
 
     .hero-sub {
-      font-family: 'IM Fell English', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-size: 1.3rem;
       color: var(--fog);
@@ -249,7 +249,7 @@
     }
 
     h2 em {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       color: var(--gold);
     }
@@ -280,7 +280,7 @@
     }
 
     .pull-quote {
-      font-family: 'IM Fell English', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-size: 1.6rem;
       line-height: 1.5;
@@ -309,9 +309,16 @@
       margin: 0 auto;
       padding: 7rem 3rem;
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 6rem;
+      grid-template-columns: 1fr 1fr 1.4fr;
+      gap: 4rem;
       align-items: start;
+    }
+
+    .brotherhood-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: url('images/site/brotherhood.jpg') center / cover no-repeat;
+      border: 1px solid var(--bark);
     }
 
     .brotherhood-inner h2 {
@@ -341,7 +348,7 @@
     }
 
     .initiation-box p {
-      font-family: 'IM Fell English', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-size: 1.15rem;
       color: var(--cream);
@@ -362,9 +369,20 @@
       margin-top: 4rem;
     }
 
+    .ancestors-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: url('images/site/forest.jpg') center / cover no-repeat;
+      border: 1px solid var(--bark);
+    }
+
     /* PROGRAMME */
     .programme {
-      background: var(--dark);
+      position: relative;
+      background:
+        linear-gradient(to bottom, var(--dark) 0%, rgba(18,16,11,0.92) 30%, var(--dark) 100%),
+        url('images/site/programme.jpg') center 30% / cover no-repeat;
+      background-attachment: fixed;
     }
 
     .programme-inner {
@@ -375,7 +393,7 @@
 
     .programme-intro {
       max-width: 640px;
-      font-family: 'IM Fell English', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-size: 1.25rem;
       color: rgba(240,232,213,0.8);
@@ -442,7 +460,7 @@
     }
 
     .dynamics-tag {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 1rem;
       color: rgba(240,232,213,0.6);
       border: 1px solid var(--bark);
@@ -463,21 +481,9 @@
     .lieu-visual {
       position: relative;
       aspect-ratio: 3/4;
-      background: var(--earth);
+      background: url('images/site/venue.jpg') center / cover no-repeat;
       border: 1px solid var(--bark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       overflow: hidden;
-    }
-
-    .lieu-visual-placeholder {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--ash);
-      text-align: center;
     }
 
     .lieu-visual::after {
@@ -500,13 +506,21 @@
     }
 
     .accom-quote {
-      font-family: 'IM Fell English', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-size: 1.5rem;
       color: var(--cream);
       margin-bottom: 4rem;
       max-width: 600px;
       line-height: 1.6;
+    }
+
+    .accom-photo {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: url('images/site/accom.jpg') center / cover no-repeat;
+      border: 1px solid var(--bark);
+      margin-bottom: 4rem;
     }
 
     .accom-list {
@@ -589,7 +603,7 @@
     }
 
     .team-role {
-      font-family: 'IM Fell English', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-size: 0.95rem;
       color: var(--fog);
@@ -658,7 +672,7 @@
     }
 
     .pricing-amount {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 3.5rem;
       font-weight: 300;
       color: var(--cream);
@@ -667,7 +681,7 @@
     }
 
     .pricing-deadline {
-      font-family: 'IM Fell English', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-size: 0.9rem;
       color: var(--ember);
@@ -708,7 +722,7 @@
 
     .pricing-note {
       margin-top: 3rem;
-      font-family: 'IM Fell English', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-size: 0.95rem;
       color: var(--fog);
@@ -725,7 +739,9 @@
     .cta-bg {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at center, rgba(196,112,58,0.1) 0%, transparent 60%);
+      background:
+        linear-gradient(to bottom, var(--black) 0%, rgba(10,9,5,0.78) 50%, var(--black) 100%),
+        url('images/site/cta.jpg') center 35% / cover no-repeat;
     }
 
     .cta h2 {
@@ -737,7 +753,7 @@
     .cta p {
       max-width: 500px;
       margin: 0 auto 3rem;
-      font-family: 'IM Fell English', serif;
+      font-family: 'Poppins', sans-serif;
       font-style: italic;
       font-size: 1.2rem;
       position: relative;
@@ -893,6 +909,7 @@
         <div class="section-label">Brotherhood</div>
         <h2>Why gather<br>as <em>brothers</em></h2>
       </div>
+      <div class="brotherhood-photo reveal"></div>
       <div class="brotherhood-body reveal">
         <p>There are things that only happen in the company of other men. Not competition. Not performance.</p>
         <p>Accountability. Honesty. The kind of silence that holds you. Brotherhood is not a concept. It's a practice. And it changes you.</p>
@@ -913,6 +930,7 @@
           <p>Our first gatherings took us to the desert of Morocco — wide open, stripped back, ancestral.</p>
           <p>This time, the forest is calling. The lakes, the pines, the cold water, the dark earth of Northern Europe.</p>
           <p>Our own roots. What our ancestors knew before it was forgotten. Nature doesn't ask who you are. It reminds you.</p>
+          <div class="ancestors-photo reveal" style="margin-top: 2rem;"></div>
         </div>
         <div class="reveal" style="border-left: 1px solid var(--bark); padding-left: 3rem; margin-top: 0.5rem;">
           <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--fog); margin-bottom: 2rem;">Previous Editions</p>
@@ -998,9 +1016,7 @@
         <p>Built and tended with care by Adam, its guardian, for over a decade. A temazcal by the water. A sauna. Ancient trees. Total stillness.</p>
         <p>Not a retreat centre. A living place.</p>
       </div>
-      <div class="lieu-visual reveal">
-        <div class="lieu-visual-placeholder">Your photo here</div>
-      </div>
+      <div class="lieu-visual reveal"></div>
     </div>
   </div>
 
@@ -1008,6 +1024,7 @@
   <div class="accom full-width">
     <div class="accom-inner">
       <div class="section-label reveal">Accommodations</div>
+      <div class="accom-photo reveal"></div>
       <div class="accom-quote reveal">"Every house has its own spirit.<br>Each one is a little piece of art."<br><span style="font-size: 0.9rem; color: var(--fog);">— Adam, guardian of Silent Lake</span></div>
       <div class="accom-list reveal">
         <div class="accom-item">
