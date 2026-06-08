@@ -90,8 +90,10 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 0 3rem 6rem;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 3rem;
       position: relative;
       overflow: hidden;
       background: var(--black);
@@ -101,102 +103,88 @@
       position: absolute;
       inset: 0;
       background:
-                  linear-gradient(to bottom, rgba(10,9,5,0.55) 0%, rgba(10,9,5,0.35) 40%, var(--black) 100%),
-                  url('images/site/hero.jpg') center 30% / cover no-repeat;
-    }
-
-    .hero-line {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold), transparent);
-      opacity: 0.3;
+        linear-gradient(to bottom, rgba(10,9,5,0.45) 0%, rgba(10,9,5,0.55) 60%, var(--black) 100%),
+        url('images/site/hero.jpg') center 30% / cover no-repeat;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
     }
 
-    .edition-tag {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
+    .hero-eyebrow {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
       letter-spacing: 0.35em;
       text-transform: uppercase;
       color: var(--ember);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       opacity: 0;
       animation: fadeUp 1s ease 0.2s forwards;
     }
 
     .hero h1 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(3rem, 8vw, 7rem);
+      font-size: clamp(3.5rem, 10vw, 8rem);
       font-weight: 400;
       line-height: 1.0;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       color: var(--cream);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0;
       opacity: 0;
-      animation: fadeUp 1s ease 0.4s forwards;
+      animation: fadeUp 1s ease 0.35s forwards;
     }
 
-    .hero h1 em {
+    .hero-gathering {
       font-family: 'Poppins', sans-serif;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--gold);
-      font-size: 0.85em;
-    }
-
-    .hero-sub {
-      font-family: 'Poppins', sans-serif;
-      font-style: italic;
-      font-size: 1.3rem;
-      color: var(--fog);
-      margin-top: 1.5rem;
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-top: 1rem;
       margin-bottom: 3rem;
       opacity: 0;
-      animation: fadeUp 1s ease 0.6s forwards;
+      animation: fadeUp 1s ease 0.5s forwards;
     }
 
-    .hero-meta {
-      display: flex;
-      gap: 3rem;
-      align-items: center;
+    .hero-date-block {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
       opacity: 0;
-      animation: fadeUp 1s ease 0.8s forwards;
+      animation: fadeUp 1s ease 0.7s forwards;
     }
 
-    .hero-date {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--cream);
+    .hero-logo {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      opacity: 0;
+      animation: fadeUp 1s ease 1s forwards;
     }
 
-    .hero-divider {
-      width: 40px;
-      height: 1px;
-      background: var(--ash);
-    }
-
-    .hero-place {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--fog);
+    .hero-logo img {
+      width: 80px;
+      opacity: 0.85;
     }
 
     .hero-scroll {
       position: absolute;
-      bottom: 2.5rem;
+      bottom: 3rem;
       right: 3rem;
       font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
+      font-size: 0.55rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--ash);
@@ -869,16 +857,14 @@
   <!-- HERO -->
   <section class="hero full-width">
     <div class="hero-bg"></div>
-    <div class="hero-line"></div>
     <div class="hero-content">
-      <div class="edition-tag">4th Edition &nbsp;·&nbsp; Men's Gathering</div>
-      <h1>Brotherhood<br><em>Circle</em></h1>
-      <div class="hero-sub">Silent Lake &nbsp;·&nbsp; North Poland</div>
-      <div class="hero-meta">
-        <span class="hero-date">September 6–13, 2026</span>
-        <span class="hero-divider"></span>
-        <span class="hero-place">8 Days &nbsp;·&nbsp; 20 Men</span>
-      </div>
+      <div class="hero-eyebrow">4th Edition &nbsp;·&nbsp; Brotherhood Circle</div>
+      <h1>Silent Lake II</h1>
+      <div class="hero-gathering">Men's Gathering</div>
+      <div class="hero-date-block">September 6–13, 2026 &nbsp;›››</div>
+    </div>
+    <div class="hero-logo">
+      <img src="images/logo.png" alt="Brotherhood Circle" onerror="this.style.display='none'" />
     </div>
     <div class="hero-scroll">Scroll</div>
   </section>
