@@ -944,6 +944,85 @@
       z-index: 1;
     }
 
+    /* ABOUT BANNER */
+    .about-banner {
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+    }
+    .about-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    /* SECTION NAV */
+    .section-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(10,9,5,0.95);
+      border-bottom: 1px solid var(--bark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+      height: 64px;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease;
+    }
+
+    .section-nav.hidden { transform: translateY(-100%); }
+
+    .section-nav-logo img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+
+    .section-nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .section-nav-links a {
+      font-family: 'Garet', sans-serif;
+      font-weight: 400;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(240,232,213,0.5);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .section-nav-links a:hover,
+    .section-nav-links a.active { color: var(--cream); }
+
+    .section-nav-cta {
+      font-family: 'Garet', sans-serif;
+      font-weight: 400;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(193,96,67,0.15);
+      border: 1px solid rgba(193,96,67,0.5);
+      padding: 0.5rem 1.2rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .section-nav-cta:hover { background: var(--accent); border-color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .section-nav-links { display: none; }
+      .section-nav { padding: 0 1.5rem; }
+    }
+
     /* FOOTER */
     footer {
       border-top: 1px solid var(--bark);
@@ -1051,11 +1130,19 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">
-      <img src="images/logo.png" alt="Brotherhood Circle" style="height:42px; width:auto; display:block;">
+  <nav class="section-nav" id="sectionNav">
+    <a href="#" class="section-nav-logo">
+      <img src="images/logo.png" alt="Brotherhood Circle">
     </a>
-    <a href="#apply" class="nav-cta">Apply Now</a>
+    <div class="section-nav-links">
+      <a href="#intention">The Gathering</a>
+      <a href="#programme">Programme</a>
+      <a href="#venue">Venue</a>
+      <a href="#team">Team</a>
+      <a href="#pricing">Investment</a>
+      <a href="#about">About</a>
+    </div>
+    <a href="#apply" class="section-nav-cta">Apply Now</a>
   </nav>
 
   <!-- HERO -->
@@ -1074,6 +1161,7 @@
   </section>
 
   <!-- INTENTION -->
+  <div id="intention"></div>
   <section>
     <div class="section-label">Remembering</div>
     <div class="intention">
@@ -1153,6 +1241,7 @@
   <div class="photo-strip photo-strip-2"></div>
 
   <!-- PROGRAMME -->
+  <div id="programme"></div>
   <div class="programme full-width">
     <div class="programme-inner">
       <div class="section-label reveal">The Programme</div>
@@ -1211,6 +1300,7 @@
   <div class="photo-strip photo-strip-3"></div>
 
   <!-- LIEU -->
+  <div id="venue"></div>
   <div class="full-width">
     <div class="lieu-inner">
       <div class="reveal">
@@ -1290,6 +1380,7 @@
   <div class="photo-strip photo-strip-6"></div>
 
   <!-- TEAM -->
+  <div id="team"></div>
   <section>
     <div class="section-label reveal">The Team</div>
     <div class="team-grid reveal">
@@ -1320,6 +1411,7 @@
   <div class="photo-strip photo-strip-5"></div>
 
   <!-- PRICING -->
+  <div id="pricing"></div>
   <div class="pricing full-width">
     <div class="pricing-inner">
       <div class="section-label reveal">Investment</div>
@@ -1369,40 +1461,39 @@
   </div>
 
   <!-- ABOUT BROTHERHOOD CIRCLE -->
+  <div id="about"></div>
   <div class="who full-width">
     <div class="who-inner">
       <div class="section-label reveal">About Brotherhood Circle</div>
-      <div class="about-grid">
-        <div class="about-photo reveal">
-          <img src="images/site/about.jpg" alt="Brotherhood Circle — Morocco 2026" style="width:100%; height:100%; object-fit:cover; display:block;">
+      <h2 class="reveal">A global movement<br>rooted in <em>men's work</em></h2>
+      <div class="who-grid" style="margin-top:3rem;">
+        <div class="reveal">
+          <h3 class="who-col-title">Who comes</h3>
+          <ul class="who-list">
+            <li>Men between 28 and 50, from Europe and beyond</li>
+            <li>Those who feel something essential is missing</li>
+            <li>Men going through transitions — fatherhood, burnout, loss</li>
+            <li>Those already exploring therapy, meditation, or men's work</li>
+            <li>Anyone tired of pretending and ready to go deeper</li>
+          </ul>
         </div>
-        <div class="about-content">
-          <h2 class="reveal">A global movement<br>rooted in <em>men's work</em></h2>
-          <div class="who-grid" style="margin-top:2rem;">
-            <div class="reveal">
-              <h3 class="who-col-title">Who comes</h3>
-              <ul class="who-list">
-                <li>Men between 28 and 50, from Europe and beyond</li>
-                <li>Those who feel something essential is missing</li>
-                <li>Men going through transitions — fatherhood, burnout, loss</li>
-                <li>Those already exploring therapy, meditation, or men's work</li>
-                <li>Anyone tired of pretending and ready to go deeper</li>
-              </ul>
-            </div>
-            <div class="reveal">
-              <h3 class="who-col-title">What we stand for</h3>
-              <ul class="who-list">
-                <li>Brotherhood — real, honest, without performance</li>
-                <li>Ancestral wisdom brought into modern life</li>
-                <li>Nature as a teacher, not just a backdrop</li>
-                <li>Integrity — we walk our talk</li>
-                <li>Sovereignty — each man is his own authority</li>
-              </ul>
-            </div>
-          </div>
+        <div class="reveal">
+          <h3 class="who-col-title">What we stand for</h3>
+          <ul class="who-list">
+            <li>Brotherhood — real, honest, without performance</li>
+            <li>Ancestral wisdom brought into modern life</li>
+            <li>Nature as a teacher, not just a backdrop</li>
+            <li>Integrity — we walk our talk</li>
+            <li>Sovereignty — each man is his own authority</li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- PHOTO BANDE ABOUT -->
+  <div class="about-banner reveal">
+    <img src="images/site/about.jpg" alt="Brotherhood Circle — Morocco 2026">
   </div>
 
   <div class="approach full-width">
@@ -1456,6 +1547,22 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     reveals.forEach(el => observer.observe(el));
+
+    // Navbar active section highlight
+    const navLinks = document.querySelectorAll('.section-nav-links a');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const link = document.querySelector(`.section-nav-links a[href="#${entry.target.id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { threshold: 0, rootMargin: '-40% 0px -55% 0px' });
+    ['intention','programme','venue','team','pricing','about'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) sectionObserver.observe(el);
+    });
   </script>
 
 </body>
