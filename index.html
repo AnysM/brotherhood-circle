@@ -1244,16 +1244,21 @@
       .lieu-visual { aspect-ratio: 4/3; }
 
       .accom-inner { padding: 3.5rem 1.5rem; }
-      .accom-list { grid-template-columns: 1fr 1fr; }
+      .accom-list { grid-template-columns: 1fr; }
+      .accom-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--bark); }
+      .accom-item:last-child { border-bottom: none; }
 
       .map-inner { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1.5rem 3rem; }
       .map-embed { height: 280px; }
 
       .team-inner { padding: 3.5rem 1.5rem; }
       .team-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .team-bio { display: none; }
 
       .pricing-inner { padding: 3.5rem 1.5rem; }
       .pricing-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .pricing-card { padding: 2rem 1.5rem; box-sizing: border-box; }
+      .pricing-amount { font-size: 2.8rem; }
 
       .about-banner { height: 45vh; }
       .about-grid { grid-template-columns: 1fr; }
