@@ -1138,13 +1138,15 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      transition: filter 0.3s ease;
     }
-    .programme-item.item-photo:hover { background-color: transparent; }
-    .item-temazcal { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-temazcal.jpg'); }
-    .item-stones   { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-stones.jpg'); }
-    .item-sauna    { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-sauna.jpg'); }
-    .item-kayak    { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-kayak.jpg'); }
-    .item-bushcraft{ background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-bushcraft.jpg'); }
+    .programme-item.item-photo:hover { filter: brightness(1.15); background-color: transparent; }
+    .item-medicine  { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-medicine.jpg'); }
+    .item-temazcal  { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-temazcal.jpg'); }
+    .item-stones    { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-stones.jpg'); }
+    .item-sauna     { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-sauna.jpg'); }
+    .item-kayak     { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-kayak.jpg'); }
+    .item-bushcraft { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-bushcraft.jpg'); }
 
     /* ANIMATIONS */
     @keyframes fadeUp {
@@ -1307,21 +1309,13 @@
       <h2 class="reveal">A week of <em>initiation</em></h2>
       <p class="programme-intro reveal">Eight days in the forest. To reconnect with what is alive and wild in us, and carry it back into the world.</p>
       <div class="programme-grid reveal">
-        <div class="programme-item">
+        <div class="programme-item item-photo item-medicine">
           <div class="programme-item-title">Plant Medicine Ceremonies</div>
           <div class="programme-item-desc">Guided by Lasu, a facilitator working with forest medicines</div>
         </div>
         <div class="programme-item item-photo item-temazcal">
           <div class="programme-item-title">Temazcal</div>
           <div class="programme-item-desc">Sweat ceremony by the water. Purification through fire and steam</div>
-        </div>
-        <div class="programme-item">
-          <div class="programme-item-title">Mongolian Throat Singing</div>
-          <div class="programme-item-desc">Workshop with a specialist in this ancient vocal tradition</div>
-        </div>
-        <div class="programme-item">
-          <div class="programme-item-title">Deer Walk</div>
-          <div class="programme-item-desc">Moving through the forest in silence and presence</div>
         </div>
         <div class="programme-item item-photo item-stones">
           <div class="programme-item-title">Stone Circles</div>
@@ -1338,6 +1332,14 @@
         <div class="programme-item item-photo item-kayak">
           <div class="programme-item-title">Kayak</div>
           <div class="programme-item-desc">On the river. Movement, openness, ease</div>
+        </div>
+        <div class="programme-item">
+          <div class="programme-item-title">Mongolian Throat Singing</div>
+          <div class="programme-item-desc">Workshop with a specialist in this ancient vocal tradition</div>
+        </div>
+        <div class="programme-item">
+          <div class="programme-item-title">Deer Walk</div>
+          <div class="programme-item-desc">Moving through the forest in silence and presence</div>
         </div>
       </div>
       <div class="programme-dynamics reveal">
