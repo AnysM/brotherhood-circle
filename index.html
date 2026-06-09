@@ -852,8 +852,7 @@
       position: relative;
       overflow: hidden;
       min-height: 80vh;
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -879,9 +878,22 @@
     }
 
     .cta h2 {
-      font-size: clamp(2rem, 5vw, 4rem);
-      margin-bottom: 1.5rem;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      margin-bottom: 0.5rem;
       position: relative;
+      z-index: 1;
+    }
+
+    .cta-date {
+      font-family: 'Garet', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(240,232,213,0.55);
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
     }
 
     .cta p {
@@ -891,6 +903,7 @@
       font-style: italic;
       font-size: 0.92rem;
       position: relative;
+      z-index: 1;
     }
 
     .cta-button {
@@ -906,6 +919,7 @@
       padding: 1.2rem 3.5rem;
       text-decoration: none;
       position: relative;
+      z-index: 1;
       transition: all 0.3s ease;
     }
 
@@ -923,6 +937,7 @@
       text-transform: uppercase;
       color: var(--fog);
       position: relative;
+      z-index: 1;
     }
 
     /* FOOTER */
@@ -1349,15 +1364,6 @@
     </div>
   </div>
 
-  <!-- CTA -->
-  <section class="cta" id="apply">
-    <div class="cta-bg"></div>
-    <h2 class="reveal">Silent Lake II<br><em>September 6 to 13, 2026</em></h2>
-    <p class="reveal">Applications open now. Early bird until July 15.</p>
-    <a href="https://forms.gle/XGRRVMEsymQgbtJm9" target="_blank" class="cta-button reveal">Apply Now</a>
-    <div class="cta-spots reveal">20 spots total &nbsp;·&nbsp; Głuche, North Poland</div>
-  </section>
-
   <!-- ABOUT BROTHERHOOD CIRCLE -->
   <div class="who full-width">
     <div class="who-inner">
@@ -1411,7 +1417,15 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- CTA -->
+  <div class="cta" id="apply">
+    <div class="cta-bg"></div>
+    <h2 class="reveal">Silent Lake II</h2>
+    <div class="cta-date reveal">September 6 to 13, 2026</div>
+    <p class="reveal">Applications open now. Early bird until July 15.</p>
+    <a href="https://forms.gle/XGRRVMEsymQgbtJm9" target="_blank" class="cta-button reveal">Apply Now</a>
+    <div class="cta-spots reveal">20 spots total &nbsp;·&nbsp; Głuche, North Poland</div>
+  </div>
   <footer>
     <img src="images/logo.png" alt="Brotherhood Circle" style="height:80px; width:auto; opacity:0.6;">
     <p class="footer-copy">Silent Lake, North Poland &nbsp;·&nbsp; September 6–13, 2026</p>
