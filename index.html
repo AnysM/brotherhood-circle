@@ -361,7 +361,7 @@
     .ancestors-photo {
       width: 100%;
       aspect-ratio: 4/5;
-      background: url('images/site/forest.jpg') center / cover no-repeat;
+      background: url('images/site/forest-light.jpg') center / cover no-repeat;
       border: 1px solid var(--bark);
     }
 
@@ -818,11 +818,28 @@
       position: relative;
     }
 
-    .photo-strip-1 { background-image: url('images/site/fullbleed1.jpg'); background-position: center 40%; }
+    .photo-strip-1 { background-image: url('images/site/fullbleed1.jpg'); background-position: center 50%; }
     .photo-strip-2 { background-image: url('images/site/fullbleed2.jpg'); background-position: center 30%; }
     .photo-strip-3 { background-image: url('images/site/fullbleed3.jpg'); background-position: center 50%; }
     .photo-strip-4 { background-image: url('images/site/fullbleed4.jpg'); background-position: center 25%; }
-    .photo-strip-5 { background-image: url('images/site/fullbleed5.jpg'); background-position: center 50%; }
+    .photo-strip-5 { background-image: url('images/site/fullbleed5.jpg'); background-position: center 40%; }
+    .photo-strip-6 { background-image: url('images/site/dock.jpg'); background-position: center 50%; }
+
+    /* PROGRAMME ITEMS WITH PHOTOS */
+    .programme-item.item-photo {
+      background-size: cover;
+      background-position: center;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .programme-item.item-photo:hover { background-color: transparent; }
+    .item-temazcal { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-temazcal.jpg'); }
+    .item-stones   { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-stones.jpg'); }
+    .item-sauna    { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-sauna.jpg'); }
+    .item-kayak    { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-kayak.jpg'); }
+    .item-bushcraft{ background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-bushcraft.jpg'); }
 
     /* ANIMATIONS */
     @keyframes fadeUp {
@@ -974,7 +991,7 @@
           <div class="programme-item-title">Plant Medicine Ceremonies</div>
           <div class="programme-item-desc">Guided by Lasu, a facilitator working with forest medicines</div>
         </div>
-        <div class="programme-item">
+        <div class="programme-item item-photo item-temazcal">
           <div class="programme-item-title">Temazcal</div>
           <div class="programme-item-desc">Sweat ceremony by the water. Purification through fire and steam</div>
         </div>
@@ -986,19 +1003,19 @@
           <div class="programme-item-title">Deer Walk</div>
           <div class="programme-item-desc">Moving through the forest in silence and presence</div>
         </div>
-        <div class="programme-item">
+        <div class="programme-item item-photo item-stones">
           <div class="programme-item-title">Stone Circles</div>
           <div class="programme-item-desc">Ancient ritual structure, collective intention setting</div>
         </div>
-        <div class="programme-item">
+        <div class="programme-item item-photo item-bushcraft">
           <div class="programme-item-title">Bushcraft</div>
           <div class="programme-item-desc">Practical skills in the forest. Fire, shelter, the basics of living close to the land</div>
         </div>
-        <div class="programme-item">
+        <div class="programme-item item-photo item-sauna">
           <div class="programme-item-title">Sauna</div>
           <div class="programme-item-desc">On the lake. Heat, cold water, silence</div>
         </div>
-        <div class="programme-item">
+        <div class="programme-item item-photo item-kayak">
           <div class="programme-item-title">Kayak</div>
           <div class="programme-item-desc">On the river. Movement, openness, ease</div>
         </div>
@@ -1070,8 +1087,11 @@
     </div>
   </div>
 
-  <!-- PHOTO STRIP 4 : homme qui libère son cri -->
+  <!-- PHOTO STRIP 4 : pastèque / joie -->
   <div class="photo-strip photo-strip-4"></div>
+
+  <!-- PHOTO STRIP 6 : silhouette sur le ponton -->
+  <div class="photo-strip photo-strip-6"></div>
 
   <!-- TEAM -->
   <section>
