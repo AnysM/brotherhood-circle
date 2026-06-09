@@ -1165,26 +1165,111 @@
       transform: translateY(0);
     }
 
+    /* BURGER MENU */
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--cream);
+      transition: all 0.3s ease;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: rgba(10,9,5,0.98);
+      border-bottom: 1px solid var(--bark);
+      padding: 2rem 1.5rem;
+      z-index: 199;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Garet', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(240,232,213,0.7);
+      text-decoration: none;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--bark);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav { padding: 1.5rem; }
-      section { padding: 5rem 1.5rem; }
-      .intention { grid-template-columns: 1fr; gap: 3rem; }
-      .intention-aside { border-left: none; border-top: 1px solid var(--bark); padding-left: 0; padding-top: 3rem; }
-      .brotherhood-inner { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
-      .ancestors-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .programme-inner { padding: 5rem 1.5rem; }
+      html, body { overflow-x: hidden; width: 100%; }
+      section { padding: 3.5rem 1.5rem; }
+      .full-width { padding: 3.5rem 0; }
+      .section-nav { padding: 0 1.5rem; }
+      .section-nav-links { display: none; }
+      .section-nav-cta { display: none; }
+      .burger { display: flex; }
+
+      .hero { padding: 0 1.5rem 4rem; min-height: 100svh; }
+
+      .intention { grid-template-columns: 1fr; gap: 2rem; }
+      .intention-aside { border-left: none; border-top: 1px solid var(--bark); padding-left: 0; padding-top: 2rem; }
+
+      .brotherhood-inner { grid-template-columns: 1fr; gap: 2rem; padding: 3.5rem 1.5rem; }
+      .brotherhood-photo { display: none; }
+
+      .ancestors-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .ancestors-inner { padding: 3.5rem 1.5rem; }
+
+      .programme-inner { padding: 3.5rem 1.5rem; }
       .programme-grid { grid-template-columns: 1fr; }
-      .programme-item:nth-child(even) { border-right: 1px solid var(--bark); }
-      .lieu-inner { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
-      .accom-inner { padding: 5rem 1.5rem; }
+      .programme-item { border-right: 1px solid var(--bark); }
+
+      .who-inner { padding: 3.5rem 1.5rem 2rem; }
+      .who-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .approach-inner { padding: 1.5rem 1.5rem 3.5rem; }
+      .approach-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+      .lieu-inner { grid-template-columns: 1fr; gap: 2rem; padding: 3.5rem 1.5rem; }
+      .lieu-visual { aspect-ratio: 4/3; }
+
+      .accom-inner { padding: 3.5rem 1.5rem; }
       .accom-list { grid-template-columns: 1fr 1fr; }
-      .team-inner { padding: 5rem 1.5rem; }
-      .team-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .pricing-inner { padding: 5rem 1.5rem; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .hero { padding: 0 1.5rem 5rem; }
+
+      .map-inner { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1.5rem 3rem; }
+      .map-embed { height: 280px; }
+
+      .team-inner { padding: 3.5rem 1.5rem; }
+      .team-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+      .pricing-inner { padding: 3.5rem 1.5rem; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+      .about-banner { height: 45vh; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo { display: none; }
+
+      .inline-cta { flex-direction: column; gap: 1.5rem; padding: 2.5rem 1.5rem; }
+
+      .cta { padding: 8rem 1.5rem; }
+      .cta h2 { font-size: clamp(2rem, 8vw, 3.5rem); }
+
+      .values-grid { grid-template-columns: 1fr; }
+      .value-item { border-right: 1px solid var(--bark); }
+
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+
+      .photo-strip { background-attachment: scroll; }
     }
   </style>
 </head>
@@ -1204,7 +1289,21 @@
       <a href="#about">About</a>
     </div>
     <a href="https://forms.gle/XGRRVMEsymQgbtJm9" target="_blank" class="section-nav-cta">Apply Now</a>
+    <button class="burger" id="burgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#intention" class="mobile-link">The Gathering</a>
+    <a href="#programme" class="mobile-link">Programme</a>
+    <a href="#venue" class="mobile-link">Venue</a>
+    <a href="#team" class="mobile-link">Team</a>
+    <a href="#pricing" class="mobile-link">Investment</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="https://forms.gle/XGRRVMEsymQgbtJm9" target="_blank" style="color: var(--accent);">Apply Now</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero full-width">
@@ -1630,6 +1729,20 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     reveals.forEach(el => observer.observe(el));
+
+    // Burger menu
+    const burger = document.getElementById('burgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
 
     // Navbar active section highlight
     const navLinks = document.querySelectorAll('.section-nav-links a');
