@@ -76,12 +76,15 @@
     }
 
     .nav-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
-      color: #f5f0e8;
-      text-transform: uppercase;
       text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 64px;
+      width: auto;
+      display: block;
     }
 
     .nav-cta {
@@ -381,6 +384,71 @@
       background: url('images/site/forest-light.jpg') center / cover no-repeat;
       border: 1px solid var(--bark);
     }
+
+    /* WHO IS THIS FOR */
+    .who { background: var(--earth); border-top: 1px solid var(--bark); border-bottom: 1px solid var(--bark); }
+    .who-inner { max-width: 1100px; margin: 0 auto; padding: 7rem 3rem; }
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 4rem; }
+    .who-col-title {
+      font-family: 'Garet', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    .who-list { list-style: none; }
+    .who-list li {
+      font-size: 1.05rem;
+      color: rgba(240,232,213,0.75);
+      padding: 0.8rem 0 0.8rem 1.5rem;
+      border-bottom: 1px solid var(--bark);
+      position: relative;
+    }
+    .who-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; }
+
+    /* APPROACH */
+    .approach { background: var(--dark); border-top: 1px solid var(--bark); border-bottom: 1px solid var(--bark); }
+    .approach-inner { max-width: 1100px; margin: 0 auto; padding: 7rem 3rem; }
+    .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 4rem; }
+    .approach-card { border-top: 2px solid var(--accent); padding-top: 2rem; }
+    .approach-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(193,96,67,0.2);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .approach-title {
+      font-family: 'Garet', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+    .approach-card p { font-size: 1rem; max-width: 100%; }
+
+    /* VALUES */
+    .values { background: var(--black); }
+    .values-inner { max-width: 1100px; margin: 0 auto; padding: 7rem 3rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--bark); margin-top: 4rem; }
+    .value-item { padding: 2.5rem; border-right: 1px solid var(--bark); border-bottom: 1px solid var(--bark); }
+    .value-item:nth-child(3n) { border-right: none; }
+    .value-item:nth-last-child(-n+3) { border-bottom: none; }
+    .value-name {
+      font-family: 'Garet', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .value-item p { font-size: 0.95rem; margin: 0; max-width: 100%; }
 
     /* PROGRAMME */
     .programme {
@@ -737,17 +805,30 @@
     /* CTA */
     .cta {
       text-align: center;
-      padding: 10rem 3rem;
+      padding: 12rem 3rem;
       position: relative;
       overflow: hidden;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .cta-bg {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(to bottom, var(--black) 0%, rgba(10,9,5,0.78) 50%, var(--black) 100%),
-        url('images/site/cta_color.jpg') center 40% / cover no-repeat;
+      background-image: url('images/site/cta_color.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      background-repeat: no-repeat;
+    }
+
+    .cta-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,9,5,0.55) 0%, rgba(10,9,5,0.45) 50%, rgba(10,9,5,0.65) 100%);
     }
 
     .cta h2 {
@@ -767,9 +848,10 @@
 
     .cta-button {
       display: inline-block;
-      font-family: 'Cinzel', serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.25em;
+      font-family: 'Garet', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--black);
       background: #f5f0e8;
@@ -998,6 +1080,97 @@
 
   <!-- PHOTO STRIP 2 : groupe dans la prairie -->
   <div class="photo-strip photo-strip-2"></div>
+
+  <!-- WHO IS THIS FOR -->
+  <div class="who full-width">
+    <div class="who-inner">
+      <div class="section-label reveal">Who Is This For</div>
+      <h2 class="reveal">The man who knows<br>something is <em>missing</em></h2>
+      <div class="who-grid">
+        <div class="reveal">
+          <h3 class="who-col-title">You may be carrying</h3>
+          <ul class="who-list">
+            <li>A sense of disconnection from yourself and others</li>
+            <li>Emotional isolation — nowhere to be fully real</li>
+            <li>Burnout or numbness from years of performing</li>
+            <li>Unresolved wounds from the past</li>
+            <li>A crisis of identity or purpose</li>
+            <li>Loneliness, even when surrounded by people</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3 class="who-col-title">What you'll find here</h3>
+          <ul class="who-list">
+            <li>A space to take off the mask, without judgment</li>
+            <li>Brotherhood that challenges and holds you</li>
+            <li>Tools for real transformation, not surface-level</li>
+            <li>Connection to nature, spirit, and deeper meaning</li>
+            <li>Permission to feel alive again</li>
+            <li>A tribe of men walking the same path</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPROACH -->
+  <div class="approach full-width">
+    <div class="approach-inner">
+      <div class="section-label reveal">Our Approach</div>
+      <h2 class="reveal">Three elements,<br><em>one experience</em></h2>
+      <div class="approach-grid">
+        <div class="approach-card reveal">
+          <div class="approach-number">01</div>
+          <div class="approach-title">Immersion in Ancient Cultures</div>
+          <p>We travel to places where traditional knowledge is still alive. Through respectful collaboration with local guides and communities, we learn directly from their rituals, stories, and ways of living.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="approach-number">02</div>
+          <div class="approach-title">Men's Circle & Inner Work</div>
+          <p>We sit in circle as equals. Using practices like breathwork, embodiment, and storytelling, we explore identity, purpose, wounds, and gifts — always with the aim of becoming more whole and present men.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="approach-number">03</div>
+          <div class="approach-title">Integration into the Modern World</div>
+          <p>We're not escaping reality — we're preparing to re-enter it with more clarity and purpose. Every man brings something. Every man leaves changed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <div class="values full-width">
+    <div class="values-inner">
+      <div class="section-label reveal">Our Values</div>
+      <h2 class="reveal">What guides<br><em>everything we do</em></h2>
+      <div class="values-grid reveal">
+        <div class="value-item">
+          <div class="value-name">Brotherhood</div>
+          <p>Authentic, supportive connection between men. We meet each other with honesty, vulnerability, and strength — not to fix, but to witness.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-name">Ancestral Wisdom</div>
+          <p>We honor and learn from cultures that carry ancient knowledge, approaching them with humility and deep respect.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-name">Connection to Nature</div>
+          <p>Nature is not just a setting. It is a teacher. Being in relationship with the Earth grounds our work and reminds us of what matters.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-name">Integrity</div>
+          <p>We walk our talk. Our work is rooted in personal accountability, truth-telling, and alignment between actions and intentions.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-name">Sovereignty</div>
+          <p>Each man is his own authority. We encourage every participant to take responsibility for his own journey.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-name">Curiosity & Openness</div>
+          <p>We remain open to learning and being challenged. Growth comes from listening deeply — to others, to nature, and to spirit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- PROGRAMME -->
   <div class="programme full-width">
