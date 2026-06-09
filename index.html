@@ -228,9 +228,10 @@
     }
 
     .section-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.4em;
+      font-family: 'Garet', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 3rem;
@@ -390,7 +391,10 @@
     /* WHO IS THIS FOR */
     .who { background: var(--earth); border-top: 1px solid var(--bark); border-bottom: 1px solid var(--bark); }
     .who-inner { max-width: 1100px; margin: 0 auto; padding: 7rem 3rem; }
-    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 4rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; margin-top: 0; }
+    .about-photo { aspect-ratio: 4/3; overflow: hidden; border: 1px solid var(--bark); }
+    .about-content { display: flex; flex-direction: column; }
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
     .who-col-title {
       font-family: 'Garet', sans-serif;
       font-weight: 700;
@@ -1368,27 +1372,34 @@
   <div class="who full-width">
     <div class="who-inner">
       <div class="section-label reveal">About Brotherhood Circle</div>
-      <h2 class="reveal">A global movement<br>rooted in <em>men's work</em></h2>
-      <div class="who-grid">
-        <div class="reveal">
-          <h3 class="who-col-title">Who comes</h3>
-          <ul class="who-list">
-            <li>Men between 28 and 50, from Europe and beyond</li>
-            <li>Those who feel something essential is missing</li>
-            <li>Men going through transitions — fatherhood, burnout, loss</li>
-            <li>Those already exploring therapy, meditation, or men's work</li>
-            <li>Anyone tired of pretending and ready to go deeper</li>
-          </ul>
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <img src="images/site/about.jpg" alt="Brotherhood Circle — Morocco 2026" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
-        <div class="reveal">
-          <h3 class="who-col-title">What we stand for</h3>
-          <ul class="who-list">
-            <li>Brotherhood — real, honest, without performance</li>
-            <li>Ancestral wisdom brought into modern life</li>
-            <li>Nature as a teacher, not just a backdrop</li>
-            <li>Integrity — we walk our talk</li>
-            <li>Sovereignty — each man is his own authority</li>
-          </ul>
+        <div class="about-content">
+          <h2 class="reveal">A global movement<br>rooted in <em>men's work</em></h2>
+          <div class="who-grid" style="margin-top:2rem;">
+            <div class="reveal">
+              <h3 class="who-col-title">Who comes</h3>
+              <ul class="who-list">
+                <li>Men between 28 and 50, from Europe and beyond</li>
+                <li>Those who feel something essential is missing</li>
+                <li>Men going through transitions — fatherhood, burnout, loss</li>
+                <li>Those already exploring therapy, meditation, or men's work</li>
+                <li>Anyone tired of pretending and ready to go deeper</li>
+              </ul>
+            </div>
+            <div class="reveal">
+              <h3 class="who-col-title">What we stand for</h3>
+              <ul class="who-list">
+                <li>Brotherhood — real, honest, without performance</li>
+                <li>Ancestral wisdom brought into modern life</li>
+                <li>Nature as a teacher, not just a backdrop</li>
+                <li>Integrity — we walk our talk</li>
+                <li>Sovereignty — each man is his own authority</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
