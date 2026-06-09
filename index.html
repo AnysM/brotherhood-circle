@@ -175,11 +175,11 @@
 
     .hero-date-block {
       font-family: 'Garet', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 400;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: #fff;
+      color: rgba(240,232,213,0.55);
       opacity: 0;
       animation: fadeUp 1s ease 0.7s forwards;
     }
@@ -565,6 +565,47 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(ellipse at center, rgba(196,112,58,0.08), transparent 70%);
+    }
+
+    /* MAP */
+    .map-section { background: var(--dark); border-top: 1px solid var(--bark); }
+    .map-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .map-label { display: flex; flex-direction: column; gap: 1rem; }
+    .map-address {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--cream);
+      line-height: 1.6;
+      max-width: 100%;
+      margin: 0;
+    }
+    .map-address span { font-size: 0.9rem; color: var(--fog); font-style: italic; }
+    .map-link {
+      font-family: 'Garet', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(193,96,67,0.3);
+      padding-bottom: 0.2rem;
+      width: fit-content;
+      transition: border-color 0.3s ease;
+    }
+    .map-link:hover { border-color: var(--accent); }
+    .map-embed {
+      height: 320px;
+      border: 1px solid var(--bark);
+      overflow: hidden;
     }
 
     /* ACCOMMODATIONS */
@@ -997,7 +1038,7 @@
       <div class="hero-eyebrow">4th Edition &nbsp;·&nbsp; Brotherhood Circle</div>
       <h1>Silent Lake II</h1>
       <div class="hero-gathering">Men's Gathering</div>
-      <div class="hero-date-block">September 6–13, 2026 &nbsp;›››</div>
+      <div class="hero-date-block">September 6–13, 2026 &nbsp;·&nbsp; Gluche, North Poland</div>
     </div>
     <div class="hero-logo">
       <img src="images/logo.png" alt="Brotherhood Circle" onerror="this.style.display='none'" />
@@ -1241,6 +1282,28 @@
         <p>Not a retreat centre. A living place.</p>
       </div>
       <div class="lieu-visual reveal"></div>
+    </div>
+  </div>
+
+  <!-- CARTE -->
+  <div class="map-section full-width reveal">
+    <div class="map-inner">
+      <div class="map-label">
+        <span class="section-label" style="margin-bottom:1rem;">Location</span>
+        <p class="map-address">Głuche, North Poland<br><span>53°46'N 21°58'E</span></p>
+        <a href="https://maps.app.goo.gl/payxh9AQjHYGMyiK8" target="_blank" class="map-link">Open in Maps</a>
+      </div>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2399.0!2d21.9800!3d53.7600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDQ1JzM2LjAiTiAyMcKwNTgnNDguMCJF!5e0!3m2!1sen!2sfr!4v1!5m2!1sen!2sfr&style=feature:all|element:geometry|color:0x1a1710&style=feature:all|element:labels.text.fill|color:0x8a7e6a&style=feature:all|element:labels.text.stroke|color:0x0a0905&style=feature:road|element:geometry|color:0x2e2618&style=feature:water|element:geometry|color:0x0d1a12&style=feature:landscape|element:geometry|color:0x12100b"
+          width="100%"
+          height="100%"
+          style="border:0; filter: saturate(0.4) brightness(0.7) sepia(0.3);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
   </div>
 
