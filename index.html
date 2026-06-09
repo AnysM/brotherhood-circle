@@ -82,27 +82,29 @@
     }
 
     .nav-logo img {
-      height: 64px;
+      height: 88px;
       width: auto;
       display: block;
     }
 
     .nav-cta {
-      font-family: 'Cinzel', serif;
+      font-family: 'Garet', sans-serif;
+      font-weight: 400;
       font-size: 0.7rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--cream);
-      border: 1px solid rgba(245,240,232,0.25);
+      border: 1px solid rgba(193,96,67,0.5);
+      background: rgba(193,96,67,0.08);
       padding: 0.6rem 1.4rem;
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .nav-cta:hover {
-      background: #f5f0e8;
-      color: var(--black);
-      border-color: #f5f0e8;
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
     }
 
     /* HERO */
@@ -603,7 +605,7 @@
     }
     .map-link:hover { border-color: var(--accent); }
     .map-embed {
-      height: 320px;
+      height: 420px;
       border: 1px solid var(--bark);
       overflow: hidden;
     }
@@ -850,6 +852,8 @@
       position: relative;
       overflow: hidden;
       min-height: 80vh;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -859,6 +863,8 @@
     .cta-bg {
       position: absolute;
       inset: 0;
+      width: 100%;
+      height: 100%;
       background-image: url('images/site/cta_color.jpg');
       background-size: cover;
       background-position: center 40%;
@@ -869,7 +875,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(10,9,5,0.55) 0%, rgba(10,9,5,0.45) 50%, rgba(10,9,5,0.65) 100%);
+      background: linear-gradient(to bottom, rgba(10,9,5,0.5) 0%, rgba(10,9,5,0.35) 50%, rgba(10,9,5,0.6) 100%);
     }
 
     .cta h2 {
@@ -890,12 +896,13 @@
     .cta-button {
       display: inline-block;
       font-family: 'Garet', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
+      font-weight: 400;
+      font-size: 0.8rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--black);
-      background: #f5f0e8;
+      color: #fff;
+      background: rgba(193,96,67,0.15);
+      border: 1px solid rgba(193,96,67,0.6);
       padding: 1.2rem 3.5rem;
       text-decoration: none;
       position: relative;
@@ -904,6 +911,7 @@
 
     .cta-button:hover {
       background: var(--accent);
+      border-color: var(--accent);
       transform: translateY(-2px);
     }
 
@@ -1122,97 +1130,6 @@
   <!-- PHOTO STRIP 2 : groupe dans la prairie -->
   <div class="photo-strip photo-strip-2"></div>
 
-  <!-- WHO IS THIS FOR -->
-  <div class="who full-width">
-    <div class="who-inner">
-      <div class="section-label reveal">Who Is This For</div>
-      <h2 class="reveal">The man who knows<br>something is <em>missing</em></h2>
-      <div class="who-grid">
-        <div class="reveal">
-          <h3 class="who-col-title">You may be carrying</h3>
-          <ul class="who-list">
-            <li>A sense of disconnection from yourself and others</li>
-            <li>Emotional isolation — nowhere to be fully real</li>
-            <li>Burnout or numbness from years of performing</li>
-            <li>Unresolved wounds from the past</li>
-            <li>A crisis of identity or purpose</li>
-            <li>Loneliness, even when surrounded by people</li>
-          </ul>
-        </div>
-        <div class="reveal">
-          <h3 class="who-col-title">What you'll find here</h3>
-          <ul class="who-list">
-            <li>A space to take off the mask, without judgment</li>
-            <li>Brotherhood that challenges and holds you</li>
-            <li>Tools for real transformation, not surface-level</li>
-            <li>Connection to nature, spirit, and deeper meaning</li>
-            <li>Permission to feel alive again</li>
-            <li>A tribe of men walking the same path</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- APPROACH -->
-  <div class="approach full-width">
-    <div class="approach-inner">
-      <div class="section-label reveal">Our Approach</div>
-      <h2 class="reveal">Three elements,<br><em>one experience</em></h2>
-      <div class="approach-grid">
-        <div class="approach-card reveal">
-          <div class="approach-number">01</div>
-          <div class="approach-title">Immersion in Ancient Cultures</div>
-          <p>We travel to places where traditional knowledge is still alive. Through respectful collaboration with local guides and communities, we learn directly from their rituals, stories, and ways of living.</p>
-        </div>
-        <div class="approach-card reveal">
-          <div class="approach-number">02</div>
-          <div class="approach-title">Men's Circle & Inner Work</div>
-          <p>We sit in circle as equals. Using practices like breathwork, embodiment, and storytelling, we explore identity, purpose, wounds, and gifts — always with the aim of becoming more whole and present men.</p>
-        </div>
-        <div class="approach-card reveal">
-          <div class="approach-number">03</div>
-          <div class="approach-title">Integration into the Modern World</div>
-          <p>We're not escaping reality — we're preparing to re-enter it with more clarity and purpose. Every man brings something. Every man leaves changed.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VALUES -->
-  <div class="values full-width">
-    <div class="values-inner">
-      <div class="section-label reveal">Our Values</div>
-      <h2 class="reveal">What guides<br><em>everything we do</em></h2>
-      <div class="values-grid reveal">
-        <div class="value-item">
-          <div class="value-name">Brotherhood</div>
-          <p>Authentic, supportive connection between men. We meet each other with honesty, vulnerability, and strength — not to fix, but to witness.</p>
-        </div>
-        <div class="value-item">
-          <div class="value-name">Ancestral Wisdom</div>
-          <p>We honor and learn from cultures that carry ancient knowledge, approaching them with humility and deep respect.</p>
-        </div>
-        <div class="value-item">
-          <div class="value-name">Connection to Nature</div>
-          <p>Nature is not just a setting. It is a teacher. Being in relationship with the Earth grounds our work and reminds us of what matters.</p>
-        </div>
-        <div class="value-item">
-          <div class="value-name">Integrity</div>
-          <p>We walk our talk. Our work is rooted in personal accountability, truth-telling, and alignment between actions and intentions.</p>
-        </div>
-        <div class="value-item">
-          <div class="value-name">Sovereignty</div>
-          <p>Each man is his own authority. We encourage every participant to take responsibility for his own journey.</p>
-        </div>
-        <div class="value-item">
-          <div class="value-name">Curiosity & Openness</div>
-          <p>We remain open to learning and being challenged. Growth comes from listening deeply — to others, to nature, and to spirit.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- PROGRAMME -->
   <div class="programme full-width">
     <div class="programme-inner">
@@ -1295,10 +1212,10 @@
       </div>
       <div class="map-embed">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2399.0!2d21.9800!3d53.7600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDQ1JzM2LjAiTiAyMcKwNTgnNDguMCJF!5e0!3m2!1sen!2sfr!4v1!5m2!1sen!2sfr&style=feature:all|element:geometry|color:0x1a1710&style=feature:all|element:labels.text.fill|color:0x8a7e6a&style=feature:all|element:labels.text.stroke|color:0x0a0905&style=feature:road|element:geometry|color:0x2e2618&style=feature:water|element:geometry|color:0x0d1a12&style=feature:landscape|element:geometry|color:0x12100b"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2500000!2d19.5!3d52.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f6!3m3!1m2!1s0x471bfaf8a1e4d0a5%3A0x6a5e2bb7ded7bea!2sG%C5%82uche%2C%20Poland!5e0!3m2!1sen!2sfr!4v1"
           width="100%"
           height="100%"
-          style="border:0; filter: saturate(0.4) brightness(0.7) sepia(0.3);"
+          style="border:0; filter: saturate(0.3) brightness(0.6) sepia(0.4);"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
@@ -1382,7 +1299,6 @@
   <div class="pricing full-width">
     <div class="pricing-inner">
       <div class="section-label reveal">Investment</div>
-      <h2 class="reveal">Three phases,<br><em>one week</em></h2>
       <div class="pricing-grid reveal">
         <div class="pricing-card featured">
           <div class="pricing-phase">Early Bird</div>
@@ -1437,9 +1353,62 @@
     <div class="cta-spots reveal">20 spots total &nbsp;·&nbsp; Early bird closes July 15</div>
   </section>
 
+  <!-- ABOUT BROTHERHOOD CIRCLE -->
+  <div class="who full-width">
+    <div class="who-inner">
+      <div class="section-label reveal">About Brotherhood Circle</div>
+      <h2 class="reveal">A global movement<br>rooted in <em>men's work</em></h2>
+      <div class="who-grid">
+        <div class="reveal">
+          <h3 class="who-col-title">Who comes</h3>
+          <ul class="who-list">
+            <li>Men between 28 and 50, from Europe and beyond</li>
+            <li>Those who feel something essential is missing</li>
+            <li>Men going through transitions — fatherhood, burnout, loss</li>
+            <li>Those already exploring therapy, meditation, or men's work</li>
+            <li>Anyone tired of pretending and ready to go deeper</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3 class="who-col-title">What we stand for</h3>
+          <ul class="who-list">
+            <li>Brotherhood — real, honest, without performance</li>
+            <li>Ancestral wisdom brought into modern life</li>
+            <li>Nature as a teacher, not just a backdrop</li>
+            <li>Integrity — we walk our talk</li>
+            <li>Sovereignty — each man is his own authority</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="approach full-width">
+    <div class="approach-inner">
+      <div class="section-label reveal">Our Approach</div>
+      <div class="approach-grid">
+        <div class="approach-card reveal">
+          <div class="approach-number">01</div>
+          <div class="approach-title">Immersion in Ancient Cultures</div>
+          <p>We travel to places where traditional knowledge is still alive — learning directly from rituals, stories, and ways of living.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="approach-number">02</div>
+          <div class="approach-title">Men's Circle & Inner Work</div>
+          <p>We sit in circle as equals — breathwork, embodiment, storytelling — exploring identity, purpose, and gifts.</p>
+        </div>
+        <div class="approach-card reveal">
+          <div class="approach-number">03</div>
+          <div class="approach-title">Integration</div>
+          <p>Not an escape from reality — a preparation to re-enter it with more clarity. Every man brings something. Every man leaves changed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer>
-    <img src="images/logo.png" alt="Brotherhood Circle" style="height:48px; width:auto; opacity:0.6;">
+    <img src="images/logo.png" alt="Brotherhood Circle" style="height:80px; width:auto; opacity:0.6;">
     <p class="footer-copy">Silent Lake, North Poland &nbsp;·&nbsp; September 6–13, 2026</p>
   </footer>
 
