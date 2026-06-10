@@ -1092,15 +1092,40 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 2rem;
     }
 
-    .footer-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
+    .footer-social { display: flex; flex-direction: column; gap: 1rem; }
+
+    .footer-tagline {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 0.95rem;
       color: var(--fog);
+      margin: 0;
+      max-width: 100%;
     }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .footer-links a {
+      font-family: 'Garet', sans-serif;
+      font-weight: 400;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(240,232,213,0.5);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover { color: var(--cream); }
+
+    .footer-telegram { opacity: 0.3; cursor: default; }
 
     .footer-copy {
       font-size: 0.85rem;
@@ -1285,7 +1310,8 @@
       .values-grid { grid-template-columns: 1fr; }
       .value-item { border-right: 1px solid var(--bark); }
 
-      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
+      .footer-links { justify-content: center; }
 
       .photo-strip { background-attachment: scroll; }
     }
@@ -1296,7 +1322,7 @@
   <!-- NAV -->
   <nav class="section-nav" id="sectionNav">
     <a href="#" class="section-nav-logo">
-      <img src="images/logo.png" alt="Brotherhood Circle">
+      <span style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.25em;color:var(--fog);text-transform:uppercase;text-decoration:none;">Brotherhood Circle</span>
     </a>
     <div class="section-nav-links">
       <a href="#intention">The Gathering</a>
@@ -1729,7 +1755,14 @@
     <div class="cta-spots reveal">20 spots total &nbsp;·&nbsp; Głuche, North Poland</div>
   </div>
   <footer>
-    <img src="images/logo.png" alt="Brotherhood Circle" style="height:80px; width:auto; opacity:0.6;">
+    <div class="footer-social">
+      <p class="footer-tagline">Monthly men's circles — free online, every month.</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/brotherhood.circle/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/brotherhoodcircle" target="_blank">Facebook</a>
+        <a href="#" class="footer-telegram">Telegram</a>
+      </div>
+    </div>
     <p class="footer-copy">Silent Lake, North Poland &nbsp;·&nbsp; September 6–13, 2026</p>
   </footer>
 
