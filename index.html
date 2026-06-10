@@ -1141,9 +1141,19 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      transition: filter 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .programme-item.item-photo:hover { filter: brightness(1.15); background-color: transparent; }
+    .programme-item.item-photo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10,9,5,0.3);
+      transition: opacity 0.4s ease;
+    }
+    .programme-item.item-photo:hover::before { opacity: 0; }
+    .programme-item.item-photo .programme-item-title,
+    .programme-item.item-photo .programme-item-desc { position: relative; z-index: 1; }
     .item-medicine  { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-medicine.jpg'); }
     .item-temazcal  { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-temazcal.jpg'); }
     .item-stones    { background-image: linear-gradient(rgba(10,9,5,0) 0%, rgba(10,9,5,0.85) 100%), url('images/site/act-stones.jpg'); }
